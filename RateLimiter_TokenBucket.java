@@ -32,9 +32,9 @@ public class TokenBucket{
         Correct behavior:
         tokens should now be 10 (capped)
         Request arrives at time = 5 sec
-        ❌ If we skip refill():
+        If we skip refill():
         if (tokens >= 1) // tokens still 0
-        ➡️ Request is incorrectly rejected. Even though the user waited long enough. That’s a bug.
+        Request is incorrectly rejected. Even though the user waited long enough. That’s a bug.
 
         Now the same scenario WITH refill()
         Time = 5 sec, request arrives
@@ -48,7 +48,7 @@ public class TokenBucket{
         Then:
         tokens >= 1 → true
         tokens-- → 9
-        ✅ Request allowed (correct behavior)
+        Request allowed (correct behavior)
         */
 
         refill(); 
